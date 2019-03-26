@@ -18,7 +18,7 @@ import com.facebook.login.widget.LoginButton;
 
 public class Login extends AppCompatActivity {
 
-    private LoginButton login_button;
+    private LoginButton loginButton;
     private CallbackManager callbackManager;
 
 
@@ -36,6 +36,8 @@ public class Login extends AppCompatActivity {
 
 
         Button buttonOK = findViewById(R.id.buttonOK);
+
+
 
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,12 +58,20 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        buttonOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Usuarios.class);
+                startActivity(intent);
+            }
+        });
+
         callbackManager = CallbackManager.Factory.create();
-        login_button = (LoginButton) findViewById(R.id.login_button);
-        ((LoginButton) login_button).registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                goMainScreen();
+                goUsuariosScreen();
             }
 
             @Override
@@ -76,9 +86,12 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-    private void goMainScreen() {
-        Intent intent = new Intent(this, MainActivity.class);
-       // Intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP | intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
+
+
+
+    private void goUsuariosScreen() {
+        Intent intent = new Intent(this, Usuarios.class);
+        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP | intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
