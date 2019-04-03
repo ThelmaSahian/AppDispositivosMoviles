@@ -6,12 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.facebook.AccessToken;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         Button signup = findViewById(R.id.signUp);
 
@@ -32,5 +36,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /*if (AccessToken.getCurrentAccessToken() == null) {
+            goLoginScreen();
+        }
+
+        private void goLoginScreen(View view) {
+            Intent intent = new Intent (this, Login.class);
+            //  Intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP | intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+    }*/
+
+
+    }
+
+    public void logout(View view) {
     }
 }

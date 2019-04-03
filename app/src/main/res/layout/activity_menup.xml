@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="413dp"
+        android:layout_height="681dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="309dp"
+        android:layout_height="89dp"
+        android:text="Bienvenido a BabynOffer Disfruta de nuestras ofertas"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <ImageButton
+        android:id="@+id/agregar_btn"
+        android:layout_width="409dp"
+        android:layout_height="46dp"
+        android:adjustViewBounds="false"
+        android:background="@color/colorAccent"
+        android:cropToPadding="false"
+        android:onClick="startActivity(new Intent(activity_menup.this, menuagregar.class));"
+        app:srcCompat="@color/colorAccent"
+        tools:layout_editor_absoluteY="682dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:text="Agregar nuevo"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="683dp" />
+
+    <TextView
+        android:id="@+id/salidaOf_txt"
+        android:layout_width="373dp"
+        android:layout_height="47dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="189dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="39dp"
+        android:layout_height="37dp"
+        app:srcCompat="@android:drawable/ic_search_category_default"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <TextView
+        android:id="@+id/buscar_txt"
+        android:layout_width="183dp"
+        android:layout_height="34dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+</android.support.constraint.ConstraintLayout>

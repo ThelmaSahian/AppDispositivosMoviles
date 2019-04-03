@@ -1,30 +1,53 @@
 package com.babyapp;
 
+import android.content.Intent;
 import android.database.Cursor;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class Login extends AppCompatActivity {
 
+    private LoginButton loginButton;
+    private CallbackManager callbackManager;
+    private FirebaseAuth firebaseAuth;
+
+
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         final DataBaseHelper dataBaseHelper;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         dataBaseHelper = new DataBaseHelper(this);
+        firebaseAuth = FirebaseAuth.getInstance();
 
-        final EditText editTextName = findViewById(R.id.editTextName);
+        /*final EditText editTextName = findViewById(R.id.editTextName);
         final EditText editTextPass = findViewById(R.id.editTextPass);
-        final TextView textUsuario = findViewById(R.id.textUsuario);
+        final TextView textUsuario = findViewById(R.id.textUsuario);*/
 
 
-        Button buttonOK = findViewById(R.id.buttonOK);
+        //Button buttonOK = findViewById(R.id.buttonOK);
 
-        buttonOK.setOnClickListener(new View.OnClickListener() {
+
+
+        /*buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Cursor cursor = dataBaseHelper.getAllData();
@@ -41,6 +64,58 @@ public class Login extends AppCompatActivity {
                 textUsuario.setText(stringBuffer.toString());
 
             }
+        });*/
+
+        /*buttonOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Usuarios.class);
+                startActivity(intent);
+            }
+        });*/
+
+        callbackManager = CallbackManager.Factory.create();
+        loginButton = findViewById(R.id.login_button);
+        loginButton.setReadPermissions("email", "public_profile");
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                handleFacebookAccessToken(loginResult.getAccessToken());
+
+                //goUsuariosScreen();
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getApplicationContext(), R.string.com_facebook_loginview_cancel_action, Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Toast.makeText(getApplicationContext(), R.string.com_facebook_smart_login_confirmation_cancel, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onStart(){
+                Login.super.onStart();
+                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+            }
         });
+    }
+
+
+
+    /*private void goUsuariosScreen() {
+        Intent intent = new Intent(this, Usuarios.class);
+        intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TOP | intent.FLAG_ACTIVITY_CLEAR_TASK | intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }*/
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }
