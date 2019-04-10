@@ -20,8 +20,6 @@
         android:id="@+id/aceptar_btn2"
         android:layout_width="57dp"
         android:layout_height="55dp"
-        android:background="@drawable/291202"
-        app:srcCompat="@drawable/291202"
         tools:layout_editor_absoluteX="242dp"
         tools:layout_editor_absoluteY="532dp" />
 
@@ -29,8 +27,6 @@
         android:id="@+id/cancelar_btn2"
         android:layout_width="55dp"
         android:layout_height="53dp"
-        android:background="@drawable/291202"
-        app:srcCompat="@drawable/291202"
         tools:layout_editor_absoluteX="99dp"
         tools:layout_editor_absoluteY="534dp" />
 
