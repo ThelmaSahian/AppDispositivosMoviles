@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BabyApp</string>
+    <string name="app_name">BabynOffer</string>
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -13,4 +13,15 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="facebook_app_id">584095878667645</string>
+    <string name="fb_login_protocol_scheme">fb584095878667645</string>
+    <string name="inicio">inicio</string>
+    <string name="favoritos">favoritos</string>
+    <string name="chat">chat</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="cancel_login">Se canceló la operación</string>
+    <string name="error_login">Ocurrió un error al ingresar</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
+
+
 </resources>
