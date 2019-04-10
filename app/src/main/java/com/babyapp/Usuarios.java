@@ -3,8 +3,13 @@ package com.babyapp;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.recyclerview.extensions.ListAdapter;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -18,6 +23,9 @@ public class Usuarios extends AppCompatActivity {
 
     private TextView inicioTextView;
     private BottomNavigationView bottomNavigationView;
+    FloatingActionButton fab;
+    private RecyclerView recyclerView;
+    private ListAdapter listaPublicacionesAdapter;
 
 
     @Override
@@ -25,16 +33,30 @@ public class Usuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
 
-        inicioTextView = (TextView) findViewById(R.id.iniciotextView);
+        fab= findViewById(R.id.morebottom);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),activity_agregar.class);
+                startActivity(i);
+            }
+        });
+
+        //inicioTextView = (TextView) findViewById(R.id.iniciotextView);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+        recyclerView.setAdapter(listaPublicacionesAdapter);
+        recyclerView.setHasFixedSize(true);
+        final GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
+        recyclerView.setLayoutManager(layoutManager);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 if (item.getItemId() == R.id.inicioItem){
-                inicioTextView.setText(R.string.inicio);
+                    inicioTextView.setText(R.string.inicio);
                 }else if (item.getItemId() == R.id.favoritosItem) {
                     inicioTextView.setText(R.string.favoritos);
                 } else if (item.getItemId() == R.id.chatItem) {
@@ -46,9 +68,9 @@ public class Usuarios extends AppCompatActivity {
                 return false;
             }
         });
-        if (AccessToken.getCurrentAccessToken() == null) {
-            goLoginScreen();
-        }
+      //  if (AccessToken.getCurrentAccessToken() == null) {
+        //    goLoginScreen();
+       // }
 
     }
 
@@ -64,4 +86,21 @@ public class Usuarios extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {   /*accion de inflar menu superior*/
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {  //aqui decidimos lo que pasa en cada opcion del menu superior
+        switch (item.getItemId()){    //por si queremos agregar mas opciones
+            case R.id.cerrar:         //este el case de cerrar sesion
+                LoginManager.getInstance().logOut();
+                goLoginScreen();
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
