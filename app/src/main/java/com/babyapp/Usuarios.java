@@ -24,8 +24,8 @@ public class Usuarios extends AppCompatActivity {
     private TextView inicioTextView;
     private BottomNavigationView bottomNavigationView;
     FloatingActionButton fab;
-    private RecyclerView recyclerView;
-    private ListAdapter listaPublicacionesAdapter;
+   /* private RecyclerView recyclerView;
+    private ListAdapter listaPublicacionesAdapter;*/
 
 
     @Override
@@ -46,10 +46,10 @@ public class Usuarios extends AppCompatActivity {
         //inicioTextView = (TextView) findViewById(R.id.iniciotextView);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-        recyclerView.setAdapter(listaPublicacionesAdapter);
+        /*recyclerView.setAdapter(listaPublicacionesAdapter);
         recyclerView.setHasFixedSize(true);
         final GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(layoutManager);*/
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -31,14 +31,14 @@
         tools:layout_editor_absoluteX="99dp"
         tools:layout_editor_absoluteY="534dp" />
 
-    <ImageButton
+   <!-- <ImageButton
         android:id="@+id/foto_btn2"
         android:layout_width="50dp"
         android:layout_height="53dp"
         android:background="@drawable/com_facebook_auth_dialog_cancel_background"
         android:src="@drawable/mr_group_collapse"
         tools:layout_editor_absoluteX="350dp"
-        tools:layout_editor_absoluteY="471dp" />
+        tools:layout_editor_absoluteY="471dp" /> -->
 
     <ImageView
         android:id="@+id/send_img"
