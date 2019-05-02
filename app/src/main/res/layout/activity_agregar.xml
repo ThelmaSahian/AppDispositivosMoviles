@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/nompro_txt"
+        android:id="@+id/editTextProducto"
         android:layout_width="387dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -41,7 +41,7 @@
         tools:layout_editor_absoluteY="471dp" />
 
     <ImageView
-        android:id="@+id/send_img"
+        android:id="@+id/button_enviar"
         android:layout_width="58dp"
         android:layout_height="52dp"
         app:srcCompat="@android:drawable/ic_menu_send"
@@ -49,7 +49,7 @@
         tools:layout_editor_absoluteY="535dp" />
 
     <EditText
-        android:id="@+id/oferta_txt"
+        android:id="@+id/editTextOferta"
         android:layout_width="388dp"
         android:layout_height="255dp"
         android:ems="10"
@@ -60,7 +60,7 @@
         tools:layout_editor_absoluteY="216dp" />
 
     <EditText
-        android:id="@+id/suc_txt"
+        android:id="@+id/editTextSucursal"
         android:layout_width="387dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -70,7 +70,7 @@
         tools:layout_editor_absoluteY="142dp" />
 
     <ImageView
-        android:id="@+id/reg_img"
+        android:id="@+id/button_cancelar"
         android:layout_width="60dp"
         android:layout_height="54dp"
         app:srcCompat="@android:drawable/ic_menu_revert"
@@ -78,7 +78,7 @@
         tools:layout_editor_absoluteY="533dp" />
 
     <EditText
-        android:id="@+id/tiends_txt"
+        android:id="@+id/editTextTienda"
         android:layout_width="387dp"
         android:layout_height="48dp"
         android:ems="10"

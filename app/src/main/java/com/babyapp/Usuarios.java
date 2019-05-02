@@ -25,7 +25,7 @@ public class Usuarios extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     FloatingActionButton fab;
     private RecyclerView recyclerView;
-    private ListaAdapter listaPublicacionesAdapter;
+    private ListAdapter listaPublicacionesAdapter;
 
 
     @Override
@@ -44,13 +44,12 @@ public class Usuarios extends AppCompatActivity {
         });
 
         //inicioTextView = (TextView) findViewById(R.id.iniciotextView);
-        //recyclerView.setAdapter(listaPublicacionesAdapter);
-        /*recyclerView.setHasFixedSize(true);
-        final GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
-        recyclerView.setLayoutManager(layoutManager);*/
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
-
+        recyclerView.setAdapter(listaPublicacionesAdapter);
+        recyclerView.setHasFixedSize(true);
+        final GridLayoutManager layoutManager = new GridLayoutManager(this, 3);
+        recyclerView.setLayoutManager(layoutManager);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
