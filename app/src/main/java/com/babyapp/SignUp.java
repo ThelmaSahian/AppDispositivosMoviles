@@ -22,7 +22,7 @@ public class SignUp extends AppCompatActivity {
         final EditText textPass = findViewById(R.id.textPass);
         Button buttonOK = findViewById(R.id.buttonOK);
 
-        dataBaseHelper = new DataBaseHelper(this);
+        /*dataBaseHelper = new DataBaseHelper(this);
 
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,9 +31,9 @@ public class SignUp extends AppCompatActivity {
 
                 String pass = textPass.getText().toString();
 
-                Boolean result = dataBaseHelper.insertData(name, pass);
+                //Boolean result = dataBaseHelper.insertData(ID);
 
-                if(result == true){
+                //if(result == true){
                     Toast.makeText(getApplicationContext(), "El usuario ha sido guardado satisfactoriamente", Toast.LENGTH_SHORT).show();
 
                 }else{
@@ -48,6 +48,6 @@ public class SignUp extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), Usuarios.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 }

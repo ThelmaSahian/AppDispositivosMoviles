@@ -24,8 +24,8 @@ public class Usuarios extends AppCompatActivity {
     private TextView inicioTextView;
     private BottomNavigationView bottomNavigationView;
     FloatingActionButton fab;
-   /* private RecyclerView recyclerView;
-    private ListAdapter listaPublicacionesAdapter;*/
+    private RecyclerView recyclerView;
+    private ListAdapter listaPublicacionesAdapter;
 
 
     @Override
@@ -43,7 +43,7 @@ public class Usuarios extends AppCompatActivity {
             }
         });
 
-        //inicioTextView = (TextView) findViewById(R.id.iniciotextView);
+        inicioTextView = (TextView) findViewById(R.id.iniciotextView);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         /*recyclerView.setAdapter(listaPublicacionesAdapter);

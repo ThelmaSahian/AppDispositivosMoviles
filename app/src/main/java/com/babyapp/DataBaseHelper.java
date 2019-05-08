@@ -11,8 +11,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Users.db";
     public static final String TABLE_NAME = "Users_table";
     private static final String COLUMN_1 = "ID";
-    private static final String COLUMN_2 = "NAME";
-    private static final String COLUMN_3 = "PASSWORD";
+    private static final String COLUMN_2 = "PRODUCTO";
+    private static final String COLUMN_3 = "TIENDA";
+    private static final String COLUMN_4 = "SUCURSAL";
+    private static final String COLUMN_5 = "OFERTA";
 
     public DataBaseHelper(Context context){
         super(context, DATABASE_NAME, null, 1);
@@ -20,18 +22,21 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteOpenHelper){
-        sqLiteOpenHelper.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, PASSWORD TEXT)");
+        sqLiteOpenHelper.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, PRODUCTO TEXT, TIENDA TEXT, SUCURSAL TEXT, OFERTA TEXT)");
     }
 
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion){
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
     }
 
-    public boolean insertData(String name, String pass){
+    public boolean insertData(String editProducto, String editTienda, String editSucursal, String editOferta){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_2, name);
-        contentValues.put(COLUMN_3, pass);
+        contentValues.put(COLUMN_2, editProducto);
+        contentValues.put(COLUMN_3, editTienda);
+        contentValues.put(COLUMN_4, editSucursal);
+        contentValues.put(COLUMN_5, editOferta);
+
         long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         sqLiteDatabase.close();
 
