@@ -54,7 +54,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ViewHolder>{
         return dataset.size();
     }
 
-    public void adicionarListaHabitantes(ArrayList<UsersInfo> listaUsersInfo){
+    public void adicionarListaOfertas(ArrayList<UsersInfo> listaUsersInfo){
         dataset.addAll(listaUsersInfo);
         notifyDataSetChanged();
     }

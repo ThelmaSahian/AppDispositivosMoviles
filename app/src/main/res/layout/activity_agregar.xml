@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,126 +11,61 @@
         android:id="@+id/editTextProducto"
         android:layout_width="387dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginTop="50dp"
         android:text="Nombre del producto"
-        tools:layout_editor_absoluteX="11dp"
-        tools:layout_editor_absoluteY="6dp" />
-
-    <ImageButton
-        android:id="@+id/aceptar_btn2"
-        android:layout_width="57dp"
-        android:layout_height="55dp"
-        tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="532dp" />
-
-    <ImageButton
-        android:id="@+id/cancelar_btn2"
-        android:layout_width="55dp"
-        android:layout_height="53dp"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="534dp" />
-
-    <ImageButton
-        android:id="@+id/foto_btn2"
-        android:layout_width="50dp"
-        android:layout_height="53dp"
-        android:background="@drawable/com_facebook_auth_dialog_cancel_background"
-        android:src="@drawable/mr_group_collapse"
-        tools:layout_editor_absoluteX="350dp"
-        tools:layout_editor_absoluteY="471dp" />
-
-    <ImageView
-        android:id="@+id/button_enviar"
-        android:layout_width="58dp"
-        android:layout_height="52dp"
-        app:srcCompat="@android:drawable/ic_menu_send"
-        tools:layout_editor_absoluteX="241dp"
-        tools:layout_editor_absoluteY="535dp" />
+        android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/editTextOferta"
-        android:layout_width="388dp"
-        android:layout_height="255dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:singleLine="true"
-        android:text="Oferta"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="216dp" />
+        android:id="@+id/editTextTienda"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:textSize="20sp"
+        android:text="Tienda"
+        />
 
     <EditText
         android:id="@+id/editTextSucursal"
         android:layout_width="387dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginTop="150dp"
+        android:textSize="20sp"
         android:text="Sucursal"
-        tools:layout_editor_absoluteX="12dp"
-        tools:layout_editor_absoluteY="142dp" />
+        />
 
-    <ImageView
-        android:id="@+id/button_cancelar"
-        android:layout_width="60dp"
-        android:layout_height="54dp"
-        app:srcCompat="@android:drawable/ic_menu_revert"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="533dp" />
 
     <EditText
-        android:id="@+id/editTextTienda"
+        android:id="@+id/editTextOferta"
         android:layout_width="387dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Tienda"
-        tools:layout_editor_absoluteX="13dp"
-        tools:layout_editor_absoluteY="71dp" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="48dp"
-        android:layout_height="56dp"
-        app:srcCompat="@android:drawable/ic_menu_camera"
-        tools:layout_editor_absoluteX="352dp"
-        tools:layout_editor_absoluteY="471dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="182dp"
-        android:layout_height="48dp"
-        android:background="@android:color/holo_green_light"
-        app:srcCompat="@android:color/holo_green_light"
-        tools:layout_editor_absoluteX="213dp"
-        tools:layout_editor_absoluteY="677dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="184dp"
-        android:layout_height="48dp"
-        android:background="@android:color/holo_green_light"
-        app:srcCompat="@android:color/holo_red_dark"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="677dp" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="71dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Agregar"
-        tools:layout_editor_absoluteX="267dp"
-        tools:layout_editor_absoluteY="683dp" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="79dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Cancelar"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="680dp" />
+        android:layout_marginTop="200dp"
+        android:textSize="20sp"
+        android:text="Oferta"
+        />
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/button_enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="500dp"
+        android:text="Publicar"
+
+
+        />
+
+
+    <Button
+        android:id="@+id/button_cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:text="Cancelar"
+         />
+
+
+
+</RelativeLayout>
