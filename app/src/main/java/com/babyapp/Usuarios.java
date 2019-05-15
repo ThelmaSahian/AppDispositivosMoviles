@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.login.LoginManager;
@@ -25,17 +26,18 @@ public class Usuarios extends AppCompatActivity {
     private TextView inicioTextView;
     private BottomNavigationView bottomNavigationView;
     FloatingActionButton fab;
+    private RecyclerView recyclerView;
     private ListAdapter listaPublicacionesAdapter;
-
     private DataBaseHelper dataBaseHelper;
-    TextView txtResult;
+
+    private TextView txtResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuarios);
 
-        fab= findViewById(R.id.morebottom);
+        fab = findViewById(R.id.morebottom);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +47,7 @@ public class Usuarios extends AppCompatActivity {
             }
         });
 
-        inicioTextView = (TextView) findViewById(R.id.iniciotextView);
-
+        inicioTextView = (TextView) findViewById(R.id.idResult);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         /*recyclerView.setAdapter(listaPublicacionesAdapter);
@@ -59,36 +60,59 @@ public class Usuarios extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 if (item.getItemId() == R.id.inicioItem){
-                    inicioTextView.setText(R.string.inicio);
-
-                    Cursor cursor = dataBaseHelper.getAllData();
-                    StringBuffer stringBuffer = new StringBuffer();
-                    if (cursor != null && cursor.getCount() > 0) {
-                        while (cursor.moveToNext()) {
-                            stringBuffer.append("Id: " + cursor.getString(0) + "\n");
-                            stringBuffer.append("Nombre: " + cursor.getString(1) + "\n");
-                            stringBuffer.append("Apellido: " + cursor.getString(2) + "\n");
-                            stringBuffer.append("Contraseña: " + cursor.getString(3) + "\n" + "\n");
-                        }
-                        txtResult.setText(stringBuffer.toString());
-                    }
+                    //inicioTextView.setText(R.string.inicio);
+                    //goPublications();
+                    goBDPublicaciones();
                 }else if (item.getItemId() == R.id.favoritosItem) {
                     inicioTextView.setText(R.string.favoritos);
                 } else if (item.getItemId() == R.id.chatItem) {
-
-
-                    inicioTextView.setText(R.string.chat);
+                    goChatScreen();
                     
                 }
 
 
-                return false;
+                return true;
             }
         });
-      //  if (AccessToken.getCurrentAccessToken() == null) {
-        //    goLoginScreen();
-       // }
+      if (AccessToken.getCurrentAccessToken() == null) {
+         goLoginScreen();
+      }
 
+    }
+
+    private void goBDPublicaciones(){
+        dataBaseHelper = new DataBaseHelper(this);
+
+        txtResult = findViewById(R.id.idResult);
+
+        //ver = findViewById(R.id.ver_publi);
+
+
+        Cursor cursor = dataBaseHelper.getAllData();
+        StringBuffer stringBuffer = new StringBuffer();
+        if (cursor != null && cursor.getCount() > 0) {
+            while (cursor.moveToNext()) {
+                stringBuffer.append("Producto: " + cursor.getString(1) + "\n");
+                stringBuffer.append("Tienda: " + cursor.getString(2) + "\n");
+                stringBuffer.append("Sucursal: " + cursor.getString(3) + "\n" + "\n");
+                stringBuffer.append("Oferta: " + cursor.getString(4) + "\n" + "\n");
+            }
+            txtResult.setText(stringBuffer.toString());
+            Toast.makeText(getApplicationContext(), "BD encontrada", Toast.LENGTH_SHORT).show();
+
+        }else{
+            Toast.makeText(getApplicationContext(), "BD no enontrada", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void goPublications(){
+        Intent intent = new Intent(getApplicationContext(), Publicaciones.class);
+        startActivity(intent);
+    }
+
+    private void goChatScreen() {
+        Intent intent = new Intent (this, ChatActivity.class);
+        startActivity(intent);
     }
 
     private void goLoginScreen() {
@@ -112,9 +136,14 @@ public class Usuarios extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {  //aqui decidimos lo que pasa en cada opcion del menu superior
         switch (item.getItemId()){    //por si queremos agregar mas opciones
-            case R.id.cerrar:         //este el case de cerrar sesion
-                LoginManager.getInstance().logOut();
-                goLoginScreen();
+            case R.id.publicaciones:         //este el case de cerrar sesion
+                /*LoginManager.getInstance().logOut();
+                goLoginScreen();*/
+                goPublications();
+                break;
+            case R.id.chat:         //este el case de cerrar sesion
+                Intent intent = new Intent (this, ChatActivity.class);
+                startActivity(intent);
                 break;
 
         }

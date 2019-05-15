@@ -25,6 +25,10 @@ public class UsersInfo {
         return editTextTienda;
     }
 
+    public void setLastName(String lastName) {
+        editTextTienda = lastName;
+    }
+
     public String getEditTextOferta() {
         return editTextOferta;
     }

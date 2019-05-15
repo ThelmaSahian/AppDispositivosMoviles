@@ -11,9 +11,13 @@
         <menu>
 
             <item
-                android:id="@+id/cerrar"
+                android:id="@+id/publicaciones"
                 android:icon="@drawable/ic_exit"
-                android:title="Cerrar Sesion"/>
+                android:title="Publicaciones"/>
+            <item
+                android:id="@+id/chat"
+                android:icon="@drawable/ic_exit"
+                android:title="ir al chat"/>
 
 
 

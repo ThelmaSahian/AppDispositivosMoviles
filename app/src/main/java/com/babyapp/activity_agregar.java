@@ -1,7 +1,6 @@
 package com.babyapp;
 
 import android.annotation.SuppressLint;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +35,7 @@ public class activity_agregar extends AppCompatActivity {
         buttonEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String editProducto = etProducto.getText().toString();
                 String editTienda = etTienda.getText().toString();
                 String editSucursal = etSucursal.getText().toString();

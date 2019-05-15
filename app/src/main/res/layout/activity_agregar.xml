@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/editTextProducto"
-        android:layout_width="387dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Nombre del producto"
@@ -17,7 +17,7 @@
 
     <EditText
         android:id="@+id/editTextTienda"
-        android:layout_width="387dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:textSize="20sp"
@@ -26,7 +26,7 @@
 
     <EditText
         android:id="@+id/editTextSucursal"
-        android:layout_width="387dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:textSize="20sp"
@@ -36,7 +36,7 @@
 
     <EditText
         android:id="@+id/editTextOferta"
-        android:layout_width="387dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:textSize="20sp"
@@ -64,8 +64,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
         android:text="Cancelar"
-         />
-
+        />
 
 
 </RelativeLayout>

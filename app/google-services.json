@@ -1,52 +1,45 @@
 {
   "project_info": {
-    "project_number": "826256917167",
-    "firebase_url": "https://appdispositivosmoviles-login-f.firebaseio.com",
-    "project_id": "appdispositivosmoviles-login-f",
-    "storage_bucket": "appdispositivosmoviles-login-f.appspot.com"
+    "project_number": "888905385415",
+    "firebase_url": "https://babynoffer.firebaseio.com",
+    "project_id": "babynoffer",
+    "storage_bucket": "babynoffer.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:826256917167:android:8010be4318eee004",
+        "mobilesdk_app_id": "1:888905385415:android:e7811db2a492a43f",
         "android_client_info": {
-          "package_name": "com.babyapp"
+          "package_name": "com.babynoffer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "826256917167-dsm0e3d3prge2g8ic0kv05lhor6e0k3j.apps.googleusercontent.com",
+          "client_id": "888905385415-he5r4ke58lkctolbjgvcnmmrblspap8s.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.babyapp",
+            "package_name": "com.babynoffer",
             "certificate_hash": "7304f538a2d37d7b1f992b77111376035ee5021f"
           }
         },
         {
-          "client_id": "826256917167-qbmsi386k0abqhek57e41nh38gbfjqr6.apps.googleusercontent.com",
+          "client_id": "888905385415-ul45ahoafoa98daqmquct1op9ublptna.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCqO3sDYfjLl_YaIoNAFkncHZSGDSDq0ng"
+          "current_key": "AIzaSyAu8biDKmKg5ZZHcWskp3LqCfsH1_YmNZY"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "826256917167-qbmsi386k0abqhek57e41nh38gbfjqr6.apps.googleusercontent.com",
+              "client_id": "888905385415-ul45ahoafoa98daqmquct1op9ublptna.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

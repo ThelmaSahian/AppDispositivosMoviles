@@ -8,8 +8,8 @@ import android.database.Cursor;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "UsersInfo.db";
-    public static final String TABLE_NAME = "UsersInfo_table";
+    public static final String DATABASE_NAME = "Users.db";
+    public static final String TABLE_NAME = "Users_table";
     private static final String COLUMN_1 = "ID";
     private static final String COLUMN_2 = "PRODUCTO";
     private static final String COLUMN_3 = "TIENDA";
@@ -25,6 +25,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         sqLiteOpenHelper.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, PRODUCTO TEXT, TIENDA TEXT, SUCURSAL TEXT, OFERTA TEXT)");
     }
 
+    @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion){
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
     }
@@ -60,7 +61,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_3, editTienda);
         contentValues.put(COLUMN_4, editSucursal);
         contentValues.put(COLUMN_5, editOferta);
-        long result = sqLiteDatabase.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
+
+        long result = sqLiteDatabase.update(TABLE_NAME, contentValues, "ID =?", new String[]{id});
 
         if(result > 0){
             return true;
