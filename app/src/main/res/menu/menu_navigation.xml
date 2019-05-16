@@ -5,12 +5,6 @@
         android:id="@+id/inicioItem"
         android:icon="@drawable/ic_home"
         android:title="@string/inicio" />
-
-    <item
-        android:id="@+id/favoritosItem"
-        android:icon="@drawable/ic_favorite_black_24dp"
-        android:title="@string/favoritos"/>
-
     <item
         android:id="@+id/chatItem"
         android:icon="@drawable/ic_chat"

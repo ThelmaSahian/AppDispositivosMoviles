@@ -25,6 +25,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         sqLiteOpenHelper.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, PRODUCTO TEXT, TIENDA TEXT, SUCURSAL TEXT, OFERTA TEXT)");
     }
 
+    @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion){
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
     }
@@ -53,12 +54,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public boolean updateData(String id, String name, String pass){
+    public boolean updateData(String id, String editProducto, String editTienda, String editSucursal, String editOferta){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_2, name);
-        contentValues.put(COLUMN_3, pass);
-        long result = sqLiteDatabase.update(TABLE_NAME, contentValues, "ID = ?", new String[]{id});
+        contentValues.put(COLUMN_2, editProducto);
+        contentValues.put(COLUMN_3, editTienda);
+        contentValues.put(COLUMN_4, editSucursal);
+        contentValues.put(COLUMN_5, editOferta);
+
+        long result = sqLiteDatabase.update(TABLE_NAME, contentValues, "ID =?", new String[]{id});
 
         if(result > 0){
             return true;

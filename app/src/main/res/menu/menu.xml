@@ -10,13 +10,17 @@
 
         <menu>
 
+            <!--<item
+                android:id="@+id/publicaciones"
+                android:icon="@drawable/ic_exit"
+                android:title="Publicaciones"/>-->
             <item
                 android:id="@+id/cerrar"
                 android:icon="@drawable/ic_exit"
                 android:title="Cerrar Sesion"/>
             <item
                 android:id="@+id/chat"
-                android:icon="@drawable/ic_exit"
+                android:icon="@drawable/ic_chat"
                 android:title="ir al chat"/>
 
 

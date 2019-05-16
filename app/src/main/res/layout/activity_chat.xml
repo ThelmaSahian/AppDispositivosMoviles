@@ -53,11 +53,13 @@
             android:layout_height="wrap_content"
             android:hint="Escribe un mensaje"
             android:layout_weight="1"/>
+
         <Button
             android:id="@+id/btnEnviar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Enviar"/>
+            android:layout_height="31dp"
+            android:background="@color/colorAccent"
+            android:hint="Enviar" />
 
     </LinearLayout>
 
