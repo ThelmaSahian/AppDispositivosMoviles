@@ -1,6 +1,7 @@
 package com.babyapp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,6 +50,14 @@ public class activity_agregar extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Hubo un error", Toast.LENGTH_SHORT).show();
 
                 }
+            }
+        });
+
+        buttonCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Usuarios.class);
+                startActivity(intent);
             }
         });
     }

@@ -38,7 +38,7 @@ public class DatosOferta extends AppCompatActivity {
         final GridLayoutManager layoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(layoutManager);
 
-        obtenerDatos();
+        //obtenerDatos();
 
         final GestureDetector mGestureDetector = new GestureDetector(DatosOferta.this, new GestureDetector.OnGestureListener() {
             @Override
@@ -108,7 +108,7 @@ public class DatosOferta extends AppCompatActivity {
 
 
 
-    private void obtenerDatos() {
+    /*private void obtenerDatos() {
 
         TextView txtResult = (TextView) findViewById(R.id.idResult);
 
@@ -125,5 +125,5 @@ public class DatosOferta extends AppCompatActivity {
             txtResult.setText(stringBuffer.toString());
         }
 
-    }
+    }*/
 }

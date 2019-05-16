@@ -7,40 +7,80 @@
     tools:context=".activity_agregar">
 
 
-    <EditText
-        android:id="@+id/editTextProducto"
+    <TextView
+        android:id="@+id/viewProducto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Producto: "
         android:layout_marginTop="50dp"
-        android:text="Nombre del producto"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/editTextProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:text=""
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/viewTienda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tienda: "
+        android:layout_marginTop="100dp"
+        android:textSize="20sp"
+        />
 
     <EditText
         android:id="@+id/editTextTienda"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:layout_marginLeft="100dp"
         android:textSize="20sp"
-        android:text="Tienda"
+        android:text=""
+        />
+
+    <TextView
+        android:id="@+id/viewSucursal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sucursal"
+        android:layout_marginTop="150dp"
+        android:textSize="20sp"
         />
 
     <EditText
         android:id="@+id/editTextSucursal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
+        android:layout_marginLeft="100dp"
         android:textSize="20sp"
-        android:text="Sucursal"
+        android:text=""
+        />
+
+    <TextView
+        android:id="@+id/viewOferta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oferta"
+        android:layout_marginTop="200dp"
+        android:textSize="20sp"
         />
 
 
     <EditText
         android:id="@+id/editTextOferta"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
+        android:layout_marginLeft="100dp"
         android:textSize="20sp"
-        android:text="Oferta"
+        android:text=""
         />
 
 

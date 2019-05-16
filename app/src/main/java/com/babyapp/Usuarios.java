@@ -98,10 +98,10 @@ public class Usuarios extends AppCompatActivity {
                 stringBuffer.append("Oferta: " + cursor.getString(4) + "\n" + "\n");
             }
             txtResult.setText(stringBuffer.toString());
-            Toast.makeText(getApplicationContext(), "BD encontrada", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "BD encontrada", Toast.LENGTH_SHORT).show();
 
         }else{
-            Toast.makeText(getApplicationContext(), "BD no enontrada", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "BD no enontrada", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -136,11 +136,12 @@ public class Usuarios extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {  //aqui decidimos lo que pasa en cada opcion del menu superior
         switch (item.getItemId()){    //por si queremos agregar mas opciones
-            case R.id.publicaciones:         //este el case de cerrar sesion
-                /*LoginManager.getInstance().logOut();
-                goLoginScreen();*/
+            /*case R.id.publicaciones:         //este el case de cerrar sesion
+                LoginManager.getInstance().logOut();
+                goLoginScreen();
                 goPublications();
                 break;
+                */
             case R.id.chat:         //este el case de cerrar sesion
                 Intent intent = new Intent (this, ChatActivity.class);
                 startActivity(intent);

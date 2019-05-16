@@ -10,10 +10,10 @@
 
         <menu>
 
-            <item
+            <!--<item
                 android:id="@+id/publicaciones"
                 android:icon="@drawable/ic_exit"
-                android:title="Publicaciones"/>
+                android:title="Publicaciones"/>-->
             <item
                 android:id="@+id/chat"
                 android:icon="@drawable/ic_exit"
