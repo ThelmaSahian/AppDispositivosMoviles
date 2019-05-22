@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_agregar">
+
+
+    <TextView
+        android:id="@+id/viewProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:text="Producto: "
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextProducto"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/viewTienda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tienda: "
+        android:layout_marginLeft="10dp"
+
+        android:layout_marginTop="100dp"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/editTextTienda"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/viewSucursal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sucursal"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="10dp"
+
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/editTextSucursal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="150dp"
+        android:text=""
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/viewOferta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Oferta"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="10dp"
+
+        android:textSize="20sp"
+        />
+
+
+    <EditText
+        android:id="@+id/editTextOferta"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="200dp"
+        android:text=""
+        android:textSize="20sp" />
+
+
+
+    <Button
+        android:id="@+id/button_enviar"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="400dp"
+        android:background="@color/colorAccent"
+        android:text="Publicar"
+
+
+        />
+
+
+    <Button
+        android:id="@+id/button_cancelar"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="350dp"
+        android:text="Cancelar"
+        />
+
+
+</RelativeLayout>
